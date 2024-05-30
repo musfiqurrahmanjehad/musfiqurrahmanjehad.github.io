@@ -215,7 +215,7 @@
             <ul class="service-list">
               <li class="service-item">
                 <div class="service-icon-box">
-                  <img src="./index_files/icon-design.svg" alt="design icon" width="40">
+                  <img src="./assets/images/icon-design.svg" alt="design icon" width="40">
                 </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title">Web design</h4>
@@ -224,7 +224,7 @@
               </li>
               <li class="service-item">
                 <div class="service-icon-box">
-                  <img src="./index_files/icon-dev.svg" alt="Web development icon" width="40">
+                  <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
                 </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title">Web development</h4>
@@ -253,7 +253,7 @@
               <li class="testimonials-item">
                 <div class="content-card" data-testimonials-item="">
                   <figure class="testimonials-avatar-box">
-                    <img src="./assets/image/salman.jpg" style="border-radius: 20px;" alt="Salman" width="60" data-testimonials-avatar="">
+                    <img src="./assets/images/salman.jpg" style="border-radius: 20px;" alt="Salman" width="60" data-testimonials-avatar="">
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title="">Salman</h4>
                   <div class="testimonials-text" data-testimonials-text="">
@@ -264,7 +264,7 @@
               <li class="testimonials-item">
                 <div class="content-card" data-testimonials-item="">
                   <figure class="testimonials-avatar-box">
-                    <img src="./assets/imagess/qpay-sq-bg.png" style="border-radius: 20px;" alt="Nazmul Hasan" width="60" data-testimonials-avatar="">
+                    <img src="./assets/images/qpay-sq-bg.png" style="border-radius: 20px;" alt="Nazmul Hasan" width="60" data-testimonials-avatar="">
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title="">Nazmul Hasan</h4>
                   <div class="testimonials-text" data-testimonials-text="">
@@ -623,7 +623,7 @@
         $('#contact-form').on('submit', function(e) {
           e.preventDefault();
           $.ajax({
-            url: 'email.php',
+            url: 'https://mailsending.qpay.top/duckistmail.php',
             type: 'POST',
             data: $(this).serialize(),
             success: function(response) {
